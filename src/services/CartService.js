@@ -46,4 +46,4 @@ export const decreaseQuantity = (name) => {
 export const calculateTotal = () => {
   const cartStorage = getCartItems();
   return cartStorage.reduce((acc, current) => acc + (current.quantity * current.qty), 0);
-}
+};

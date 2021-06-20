@@ -6,10 +6,11 @@ import ShoppingCard from "./components/Cards";
 import CategoryCard from "./components/CategoryCard";
 import CategoryContainer from "./components/Paper";
 import { addToCart } from "./services/CartService";
-import List from "./Chekout";
+import List from "./components/Chekout";
 import OrderCompleted from "./components/OrderComplete";
 import OrdersList from "./Orders ";
 import AddItem from "./components/AddItem";
+import Loader from "./components/Loader";
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
   };
 
   useEffect(() => {
-    setIsLoading(true);
+    
     fetch(
       "https://ic5t082w58.execute-api.eu-west-1.amazonaws.com/production/api/v1/29052017"
     )
@@ -42,7 +43,9 @@ function App() {
           )
         )
           .then((responses) => Promise.all(responses.map((i) => i.json())))
-          .then((data) => setData(data))
+          .then((data) => {
+            setIsLoading(true);
+            setData(data)})
       );
   }, [render]);
 
@@ -92,7 +95,7 @@ function App() {
             )}
 
             <GridArea isRender={isRendered}>
-              {!isLoading && <p>Loading</p>}
+              {!isLoading && <Loader/>}
               {filteredProducts.map((item) => (
                 <ShoppingCard
                   key={item.id}

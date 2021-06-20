@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { getCartItems, calculateTotal } from "../services/CartService";
-import Button from "../components/Button";
+import { getCartItems, calculateTotal } from "../../services/CartService";
+import Button from "../Button";
 import moment from "moment";
 
 const Container = styled.div`
