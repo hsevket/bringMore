@@ -99,9 +99,9 @@ export default function OrdersList() {
                 <li id={i.name}>
                   <span>{i.name}</span>
                   <span>
-                    {i.quantity} x {i.qty}&#128;
+                    {i.quantity} x {i.qty}&euro;
                   </span>{" "}
-                  =<span>{i.quantity * i.qty} &#128;</span>
+                  =<span>{i.quantity * i.qty} &euro;</span>
                 </li>
               ))}
               <li>
@@ -112,7 +112,7 @@ export default function OrdersList() {
                     (acc, current) => acc + current.quantity * current.qty,
                     0
                   )}
-                  &#128;
+                  &euro;
                 </span>
                 <Button onClick={() => handleRemove(i)}>Delete Order</Button>
               </li>
