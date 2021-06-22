@@ -100,16 +100,16 @@ const List = () => {
               <li id={i.name}>
                 <span>{i.name}</span>
                 <span>
-                  {i.quantity} x {i.qty}&#128;
+                  {i.quantity} x {i.qty}&euro;
                 </span>{" "}
-                =<span>{i.quantity * i.qty} &#128;</span>
+                =<span>{i.quantity * i.qty} &euro;</span>
               </li>
             );
           })}
         </ul>
       </div>
       <div>
-        <p>Total Price: {calculateTotal()} &#128; </p>
+        <p>Total Price: {calculateTotal()} &euro; </p>
 
         <Link to="/orderComplete">
           <Button>complete the order</Button>

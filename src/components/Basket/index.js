@@ -52,8 +52,8 @@ function Basket({ isRender }) {
                 <button onClick={() => handleDecrease(i.name)}>-</button>{" "}
                 {i.quantity}{" "}
                 <button onClick={() => handleIcrease(i.name)}>+</button> x{" "}
-                {i.qty}&#128; = {i.quantity * i.qty}
-                &#128;
+                {i.qty}&euro; = {i.quantity * i.qty}
+                &euro;
                 <button onClick={(e) => handleRemove(e)}>x</button>
               </li>
             );
@@ -61,7 +61,7 @@ function Basket({ isRender }) {
         </ul>
       </div>
       <div>
-        <p>Total Price: {calculateTotal()}  &#128; </p>
+        <p>Total Price: {calculateTotal()}  &euro; </p>
         <Link to="/checkout"> <button> check out </button></Link>
       </div>
     </Wrapper>

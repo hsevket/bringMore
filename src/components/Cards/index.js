@@ -30,7 +30,7 @@ export default function ShoppingCard({ image, title, price, onAdd }) {
     <Card>
       <img src={image} alt={title} />
       <div>{title}</div>
-      <div>{price} &#128;</div>
+      <div>{price} &euro;</div>
       <Button onClick = {onAdd}>+Add</Button>
     </Card>
   );
